@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b31">
+  <meta name="description" content="TUFY Volleyball Tournament — teams, fixtures, live scores, prizes and registration.">
+  <title>TUFY Volleyball Tournament</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"><span>🏐 THE GAME. THE GLORY. THE COMMUNITY.</span><span class="top-right">30 TEAMS · 10 PRIZE PLACES</span></div>
+  <header class="nav">
+    <a class="brand" href="#home"><span class="brand-mark">T</span><span>TUFY <b>VOLLEYBALL</b></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <nav id="navLinks">
+      <a href="#about">About</a><a href="#prizes">Prizes</a><a href="#teams">Teams</a><a href="#fixtures">Matches</a><a href="#scores">Scoreboard</a>
+      <a class="nav-cta" href="#register">Register a team ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> TOURNAMENT SEASON</div>
+        <h1>RISE UP.<br><em>PLAY HARD.</em><br>OWN THE COURT.</h1>
+        <p>One court. Thirty teams. Ten prize-winning finishes. Bring your squad and make every point count.</p>
+        <div class="hero-actions"><a class="button button-lime" href="#register">REGISTER YOUR TEAM <span>↗</span></a><a class="text-link" href="#fixtures">Explore matches ↓</a></div>
+        <div class="hero-stats"><div><strong>30</strong><small>TEAM SLOTS</small></div><div><strong>10</strong><small>PRIZE PLACES</small></div><div><strong>01</strong><small>CHAMPION</small></div></div>
+      </div>
+      <div class="hero-photo"><img src="assets/team-photo.jpeg" alt="Volleyball players together after a tournament"><div class="photo-tag">TUFY · THE VOLLEYBALL FAMILY</div></div>
+      <div class="hero-number">01<span>/ TOURNAMENT</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Tournament highlights"><div>PLAY WITH PASSION <b>✳</b> RESPECT THE GAME <b>✳</b> CHASE THE TROPHY <b>✳</b> PLAY WITH PASSION <b>✳</b> RESPECT THE GAME <b>✳</b> CHASE THE TROPHY <b>✳</b></div></section>
+
+    <section class="section about" id="about">
+      <div class="section-kicker">01 / THE EVENT</div>
+      <div class="about-grid"><div><h2>MORE THAN<br>A <em>GAME.</em></h2></div><div class="about-copy"><p class="lead">A celebration of teamwork, skill and sportsmanship.</p><p>TUFY Volleyball Tournament brings teams together for competitive matches, unforgettable moments and a shot at the podium. Check the fixtures, follow the scores and cheer your team all the way.</p><a class="under-link" href="#teams">MEET THE TEAMS ↗</a></div></div>
+      <div class="gallery">
+        <figure class="gallery-large"><img src="assets/team-photo.jpeg" alt="Tournament team group photo"><figcaption>THE TEAM SPIRIT</figcaption></figure>
+        <figure><img src="assets/champion-photo.jpeg" alt="Player holding a tournament trophy"><figcaption>THE WINNING MOMENT</figcaption></figure>
+        <figure><img src="assets/third-place-photo.jpeg" alt="Player with trophy and volleyball"><figcaption>EVERY POINT MATTERS</figcaption></figure>
+        <figure><img src="assets/trophy-moment.jpeg" alt="Player celebrating with a trophy"><figcaption>EARN YOUR GLORY</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="prize-section" id="prizes">
+      <div class="section-kicker">02 / THE REWARDS</div>
+      <div class="section-heading"><h2>THE PODIUM<br><em>AWAITS.</em></h2><p>Ten prize places. One unforgettable tournament. Prize details below are editable placeholders—update the names and amounts before publishing.</p></div>
+      <div class="prize-grid" id="prizeGrid"></div>
+    </section>
+
+    <section class="section teams-section" id="teams">
+      <div class="section-kicker">03 / THE LINE-UP</div>
+      <div class="section-heading"><h2>30 TEAMS.<br><em>ONE DREAM.</em></h2><p>Browse the registered teams. Team slots are placeholders until registration is submitted.</p></div>
+      <div class="team-toolbar"><div class="counter"><strong id="teamCount">0</strong><span> / 30 TEAMS REGISTERED</span></div><input id="teamSearch" type="search" placeholder="Search team name…" aria-label="Search teams"></div>
+      <div class="team-grid" id="teamGrid"></div>
+    </section>
+
+    <section class="matches-section" id="fixtures">
+      <div class="section-kicker">04 / THE ROAD TO THE FINAL</div>
+      <div class="section-heading"><h2>FIXTURES &<br><em>MATCH DAY.</em></h2><p>Follow the match schedule. Replace sample fixtures with your confirmed draw, dates and court details.</p></div>
+      <div class="match-tabs"><button class="active" data-filter="all">ALL MATCHES</button><button data-filter="upcoming">UPCOMING</button><button data-filter="completed">COMPLETED</button></div>
+      <div class="match-list" id="matchList"></div>
+    </section>
+
+    <section class="section score-section" id="scores">
+      <div class="section-kicker">05 / THE NUMBERS</div>
+      <div class="section-heading"><h2>THE <em>SCOREBOARD.</em></h2><p>Scores shown are sample values for layout preview. Update them after each match.</p></div>
+      <div class="score-card"><div class="score-card-head"><span>TOURNAMENT RESULTS</span><span class="sample-label">SAMPLE DATA</span></div><div class="table-wrap"><table><thead><tr><th>MATCH</th><th>TEAM A</th><th>SETS</th><th>TEAM B</th><th>STATUS</th></tr></thead><tbody id="scoreBody"></tbody></table></div></div>
+      <details class="score-editor"><summary>Organizer: edit sample scores</summary><p>These edits are saved only in this browser. They are not shared with visitors on other devices.</p><div id="scoreEditor"></div></details>
+    </section>
+
+    <section class="register-section" id="register">
+      <div class="register-copy"><div class="section-kicker">06 / YOUR TURN</div><h2>YOUR TEAM.<br>YOUR <em>TIME.</em></h2><p>Ready to compete? Submit your team details below. The form records entries in this browser preview; connect a backend or form service before accepting real registrations online.</p><div class="register-note">30 TEAM LIMIT <span>·</span> FIRST COME, FIRST SERVED</div></div>
+      <form id="registrationForm" class="register-form">
+        <div class="form-title"><span>TEAM REGISTRATION</span><span>01 — 04</span></div>
+        <label>Team name <input name="teamName" required maxlength="40" placeholder="Enter your team name"></label>
+        <div class="form-row"><label>Captain name <input name="captain" required maxlength="50" placeholder="Team captain"></label><label>Phone number <input name="phone" required type="tel" pattern="[0-9+() -]{8,18}" placeholder="Contact number"></label></div>
+        <label>Area / College / Club <input name="location" maxlength="70" placeholder="Where is your team from?"></label>
+        <label>Players / Team members <textarea name="players" rows="3" required placeholder="Enter player names, separated by commas"></textarea></label>
+        <button class="button button-lime submit-button" type="submit">SUBMIT TEAM ENTRY <span>↗</span></button>
+        <p class="form-message" id="formMessage" role="status"></p>
+        <small>By submitting, you confirm that the team details are correct. Add official entry fee and rules before launch.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home"><span class="brand-mark">T</span><span>TUFY <b>VOLLEYBALL</b></span></a><span>PLAY FAIR. PLAY FEARLESS.</span><a href="#home">BACK TO TOP ↑</a><p>© <span id="year"></span> TUFY Volleyball Tournament. Built for the love of the game.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
